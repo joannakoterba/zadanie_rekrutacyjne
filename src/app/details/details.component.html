@@ -1,3 +1,12 @@
-<p>
-  details works!
-</p>
+<div class="photo-details">
+  <div class="container">
+    <div class="option-back">
+      <a [routerLink]="['']">
+        <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+        <span>Back</span>
+      </a>
+    </div>
+    <img *ngIf="dataPhoto" src="https://farm{{dataPhoto.farm}}.staticflickr.com/{{dataPhoto.server}}/{{dataPhoto.id}}_{{dataPhoto.secret}}_z.jpg">
+  </div>
+</div>
+

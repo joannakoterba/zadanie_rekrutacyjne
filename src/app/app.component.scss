@@ -1,0 +1,14 @@
+.navbar {
+  background-color: #2574A9;
+  border-radius: 0;
+
+  a {
+    color: #fff;
+    font-size: 20px;
+
+    &:hover {
+      color: #fff;
+      transition: 0.5s all;
+    }
+  }
+}
