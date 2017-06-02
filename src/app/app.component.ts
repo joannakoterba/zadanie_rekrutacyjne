@@ -1,23 +1,28 @@
-import {Component, Injectable, OnInit} from '@angular/core';
+import {Component, Injectable } from '@angular/core';
 import {DataService} from "./data.service";
+import {FormGroup, FormBuilder, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['app.component.scss']
 })
 
 @Injectable()
+export class AppComponent {
+  rows= [];
+  searchForm: FormGroup;
 
-export class AppComponent implements OnInit {
-
-  constructor(private dataService:DataService){
+  constructor(private dataService:DataService, private fb:FormBuilder) {
+    this.searchForm = fb.group({
+      text: ['', [Validators.required]]
+    });
   }
 
-  ngOnInit() {
-    this.dataService.getList().subscribe(response => {
-      const data = JSON.parse(response.text().replace(/^jsonFlickrApi\(/, '').replace(/\)$/, ''));
-      console.log(data);
+  onSubmit(){
+    this.dataService.getList(this.searchForm.value).subscribe(response => {
+      const data = response.json();
+      this.rows=data.photos.photo;
     });
   }
 }

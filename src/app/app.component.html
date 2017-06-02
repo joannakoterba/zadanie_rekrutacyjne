@@ -1,3 +1,27 @@
-<h1>
-  {{title}}
-</h1>
+<div class="search-panel">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <form class="form" [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <div [ngClass]="{error: !searchForm.get('text').valid && searchForm.get('text').touched}">
+              <input type="text" class="form-control" formControlName="text" id="inputSearch" placeholder="Search photo">
+            </div>
+            <div *ngIf="searchForm.get('text').hasError('required') && searchForm.get('text').touched" class="error-box">This field is required</div>
+            <button type="submit" class="btn btn-primary btn-search">Search</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="result">
+  <div class="container">
+  <div class="row">
+    <div class="col-md-2" *ngFor="let photo of rows">
+      <img class="result-photo" src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_q.jpg">
+    </div>
+  </div>
+  </div>
+</div>

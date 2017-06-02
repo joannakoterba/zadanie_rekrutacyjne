@@ -6,12 +6,13 @@ export class DataService {
 
   constructor(private http:Http){}
 
-  getList() {
+  getList(data) {
     const params = {
       method: "flickr.photos.search",
       api_key: "7fc0d6111f95eabf19ac726a9bccb93b",
       format: "json",
-      text: "test"
+      nojsoncallback: 1,
+      ...data //ES6 trick :)
     };
 
     let requesrOptions = new RequestOptions({params: params});
