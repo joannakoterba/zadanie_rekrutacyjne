@@ -1,0 +1,41 @@
+.error .form-control {
+  border: 1px solid red;
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+
+.search-panel {
+  margin: 100px 0;
+
+  .form-group {
+    position: relative;
+    margin-bottom: 30px;
+
+    #inputSearch {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    .error-box {
+      color: red;
+    }
+
+    .btn-search {
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 10px 30px 11px 30px;
+    }
+  }
+}
+
+.result {
+  &-photo {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  &-pagination {
+    text-align: center;
+  }
+}

@@ -6,14 +6,25 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import {DataService} from "./data.service";
 import {PaginationModule} from "ngx-bootstrap";
+import { DetailsComponent } from './details/details.component';
+import {Routes, RouterModule} from "@angular/router";
+import { SearchComponent } from './search/search.component';
+
+const routes: Routes = [
+  { path: '', component: SearchComponent },
+  { path: 'details/:id', component: DetailsComponent },
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DetailsComponent,
+    SearchComponent
   ],
   imports: [
     PaginationModule.forRoot(),
     BrowserModule,
+    RouterModule.forRoot(routes),
     FormsModule,
     ReactiveFormsModule,
     HttpModule
