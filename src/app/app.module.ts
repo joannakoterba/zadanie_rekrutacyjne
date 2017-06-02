@@ -5,12 +5,14 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import {DataService} from "./data.service";
+import {PaginationModule} from "ngx-bootstrap";
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    PaginationModule.forRoot(),
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,

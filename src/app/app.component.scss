@@ -9,10 +9,15 @@
 
   .form-group {
     position: relative;
+    margin-bottom: 30px;
 
     #inputSearch {
       padding-top: 20px;
       padding-bottom: 20px;
+    }
+
+    .error-box {
+      color: red;
     }
 
     .btn-search {
@@ -25,8 +30,12 @@
 }
 
 .result {
-  .result-photo {
+  &-photo {
     width: 100%;
     margin-bottom: 20px;
+  }
+
+  &-pagination {
+    text-align: center;
   }
 }
