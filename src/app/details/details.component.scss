@@ -3,6 +3,7 @@
 
   img {
     margin-top: 30px;
+    max-width: 100%;
   }
 
   .option-back a {
@@ -11,5 +12,19 @@
     border: 1px solid #2574A9;
     border-radius: 20px;
     padding: 4px 8px;
+  }
+
+  .error {
+    margin-top: 100px;
+    &-slogan {
+      font-size: 20px;
+    }
+    .fa {
+      font-size: 20px;
+    }
+  }
+
+  .table-exif {
+    margin-top: 30px;
   }
 }

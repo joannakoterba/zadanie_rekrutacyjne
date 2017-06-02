@@ -9,6 +9,7 @@ import {DataService} from "../data.service";
 })
 export class DetailsComponent implements OnInit {
   dataPhoto: any;
+  dataExif;
 
   constructor(private dataService:DataService, private route: ActivatedRoute) { }
 
@@ -18,7 +19,11 @@ export class DetailsComponent implements OnInit {
         const data = response.json();
         this.dataPhoto = data.photo;
       });
+
+      this.dataService.getExif(params.id).subscribe(response => {
+        const data = response.json();
+        this.dataExif = data.photo.exif;
+      });
     });
   }
-
 }
