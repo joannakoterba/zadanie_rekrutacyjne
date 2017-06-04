@@ -8,15 +8,15 @@
               <input type="text" class="form-control" formControlName="text" id="inputSearch" placeholder="Search photo">
             </div>
             <div *ngIf="searchForm.get('text').hasError('required') && searchForm.get('text').touched" class="error-box">This field is required</div>
-            <button type="submit" class="btn btn-primary btn-search">Search</button>
+            <button type="submit" class="btn btn-primary btn-search" [ngClass]="{disabled: !searchForm.valid}">Search</button>
           </div>
         </div>
       </div>
       <div class="col-md-4">
         <label for="sort-select">Sort by:</label>
-        <select name="sort" class="form-control" formControlName="sort" id="sort-select">
-          <option *ngFor="let element of sortOptions" [value]="element.value">{{element.label}}</option>
-        </select>
+          <select name="sort" class="form-control" formControlName="sort" id="sort-select">
+            <option *ngFor="let element of sortOptions" [value]="element.value">{{element.label}}</option>
+          </select>
       </div>
       <div class="col-md-4">
         <label for="content-select">Content type:</label>
