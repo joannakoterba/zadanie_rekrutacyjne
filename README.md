@@ -1,6 +1,7 @@
-# ZadannieCodemine
+# Exercise - Java Script 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.6.
+To install all required dependencies simply run `npm install`.
 
 ## Development server
 
